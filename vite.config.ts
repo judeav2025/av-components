@@ -2,13 +2,17 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { globbySync } from "globby";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const entries = {
-  Button: resolve(__dirname, "lib/Button/index.tsx"),
-  Input: resolve(__dirname, "lib/Input/index.tsx"),
-};
+const componentFiles = globbySync("lib/components/*/index.tsx");
+// Generate entry points (e.g., { 'button': 'lib/components/Button/index.tsx' })
+const entries = componentFiles.reduce((acc, file) => {
+  const componentName = file.split("/")[2]; // Extract folder name (e.g., Button)
+  acc[componentName] = resolve(__dirname, file);
+  return acc;
+}, {} as Record<string, string>);
 
 export default defineConfig({
   plugins: [react()],
