@@ -12,7 +12,7 @@ export function Button({ children, onClick, type = "link" }: ButtonProps) {
     <AntButton
       type={type}
       onClick={onClick}
-      style={{ border: "1px solid #a0a0a0" }}
+      style={{ border: "1px solid #a0a0a0", backgroundColor: "red" }}
     >
       {children}
     </AntButton>
