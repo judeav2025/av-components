@@ -4,12 +4,16 @@ import React from "react";
 interface ButtonProps {
   children?: React.ReactNode;
   onClick?: () => void;
-  type?: "primary" | "default";
+  type?: "primary" | "default" | "link" | "text" | "dashed";
 }
 
-export function Button({ children, onClick, type = "default" }: ButtonProps) {
+export function Button({ children, onClick, type = "link" }: ButtonProps) {
   return (
-    <AntButton type={type} onClick={onClick}>
+    <AntButton
+      type={type}
+      onClick={onClick}
+      style={{ border: "1px solid #a0a0a0" }}
+    >
       {children}
     </AntButton>
   );

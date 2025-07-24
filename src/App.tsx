@@ -1,18 +1,29 @@
-import { useState } from "react";
-import { Button } from "../lib/components/Button";
-import { Input } from "../lib/components/Input";
+import { Button } from "../lib/ui/Button";
+import { Input } from "../lib/ui/Input";
 import "./App.css";
+
+function Component({ name, children }) {
+  return (
+    <div className="element">
+      <div className="name">
+        <h2>{name}</h2>
+      </div>
+      <div className="view">{children}</div>
+    </div>
+  );
+}
 
 function App() {
   return (
     <>
       <h1>Component Showcase</h1>
-      <div className="element">
+
+      <Component name="Button">
         <Button> Click Me </Button>
-      </div>
-      <div className="element">
+      </Component>
+      <Component name="Input">
         <Input />
-      </div>
+      </Component>
     </>
   );
 }

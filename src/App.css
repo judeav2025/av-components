@@ -1,3 +1,32 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 div.element{
     margin: 25px 0;
+    max-width: 720px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+
+}
+
+div.element .name{
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+div.element .view{
+    padding: 10px;
 }
