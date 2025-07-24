@@ -1,5 +1,15 @@
-import { type InputHTMLAttributes } from "react";
+import { Input as AntInput } from "antd";
 
-export function Input(props: InputHTMLAttributes<HTMLInputElement>) {
-  return <input {...props} />;
+// Define props interface for type safety
+interface InputProps {
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+}
+
+// Wrap AntD Input for customization
+export function Input({ value, onChange, placeholder }: InputProps) {
+  return (
+    <AntInput value={value} onChange={onChange} placeholder={placeholder} />
+  );
 }
