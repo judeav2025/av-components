@@ -15,7 +15,7 @@ export function Button({ children, onClick, type = "primary" }: ButtonProps) {
     <AntButton
       type={type}
       onClick={onClick}
-      style={{ border: "2px dashed black" }}
+      style={{ border: "2px solid black" }}
     >
       {children}
     </AntButton>
