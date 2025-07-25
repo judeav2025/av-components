@@ -7,12 +7,12 @@ interface ButtonProps {
   type?: "primary" | "default" | "link" | "text" | "dashed";
 }
 
-export function Button({ children, onClick, type = "link" }: ButtonProps) {
+export function Button({ children, onClick, type = "primary" }: ButtonProps) {
   return (
     <AntButton
       type={type}
       onClick={onClick}
-      style={{ border: "1px solid purple" }}
+      style={{ border: "3px solid purple" }}
     >
       {children}
     </AntButton>
